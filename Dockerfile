@@ -7,9 +7,10 @@ RUN apt-get update && \
     curl -LSs https://raw.githubusercontent.com/fnproject/cli/master/install | sh && \
     usermod -a -G docker $USER && \
     chmod 666 /var/run/docker.sock
-    # docker login --username=$DOCKER_USER --password=$DOCKER_PASS
-    # usermod -a -G docker $USER && \
-    # chmod 666 /var/run/docker.sock && \
+    docker login --username=$DOCKER_USER --password=$DOCKER_PASS
+    usermod -a -G docker $USER && \
+    chmod 666 /var/run/docker.sock && \
+    export FN_REGISTRY=$DOCKER_USER
     
 EXPOSE 8080
 CMD [ "fn start" ]
