@@ -1,5 +1,6 @@
 # experiments
-FROM docker:stable
+# FROM docker:stable
+FROM gitlab/dind
 
 RUN apt-get update && \
     apt-get install -y curl && \
