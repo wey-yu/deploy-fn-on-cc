@@ -1,7 +1,7 @@
 # experiments
 # FROM docker:stable
 FROM gitlab/dind
-
+RUN echo "🙂"
 RUN docker login --username=$DOCKER_USER --password=$DOCKER_PASS
 RUN echo "🙂😢🤔"
 RUN apt-get update && \
